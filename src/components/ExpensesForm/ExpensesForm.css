@@ -1,0 +1,31 @@
+.form-main{
+    width: 60%;
+    height: 40vh;
+    background-color: rgb(63, 63, 63);
+    border-radius: 10px;
+    margin: 5%;
+    margin-left: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.input-1{
+    width: 300px;
+    height: 5vh;
+    margin: 10px 15px;
+}
+label{
+    color: white;
+    margin-left: 5px;
+}
+.form-butt{
+    width: 150px;
+    height: 6vh;
+    color: white;
+    background-color: blueviolet;
+    margin-left: 100px;
+    border: 0;
+    border-radius: 5px;
+}
