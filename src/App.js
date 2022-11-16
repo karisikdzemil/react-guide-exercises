@@ -1,6 +1,7 @@
-import ExpenseItem from "./components/ExpensesItem/ExpensesItem";
+import ExpensesItem from "./components/ExpensesItem/ExpensesItem";
 import "./App.css";
 import ExpensesForm from "./components/ExpensesForm/ExpensesForm";
+import ExpensesFilter from "./components/ExpensesFilter/ExpensesFilter";
 function App() {
   const Expenses = [
     {
@@ -24,31 +25,51 @@ function App() {
       date: new Date(2022, 10, 29),
     },
   ];
+  const handlerProps = (expenses) => {
+    console.log("in app.js");
+    console.log(expenses);
+  };
+  // const exp = () =>{
+  //   Expenses.map(() =>{
+  //     return <ExpensesItem name={Expenses.name} price={Expenses.price} date={Expenses.date}/>
+  //   })
+  // }
   return (
     <div>
       <ExpensesForm />
-    <div className="mein">
-      <ExpenseItem
+      <div className="mein">
+        <ExpensesFilter appProps={handlerProps} />
+        {Expenses.map((expense) => {
+          return (
+            <ExpensesItem
+              key={expense.name}
+              name={expense.name}
+              price={expense.price}
+              date={expense.date}
+            />
+          );
+        })}
+        {/* <ExpensesItem
         name={Expenses[0].name}
         price={Expenses[0].price}
         date={Expenses[0].date}
       />
-      <ExpenseItem
+      <ExpensesItem
         name={Expenses[1].name}
         price={Expenses[1].price}
         date={Expenses[1].date}
       />
-      <ExpenseItem
+      <ExpensesItem
         name={Expenses[2].name}
         price={Expenses[2].price}
         date={Expenses[2].date}
       />
-      <ExpenseItem
-        name={Expenses[3].name}
+      <ExpensesItem
+        name={Expenses[3].name} 
         price={Expenses[3].price}
         date={Expenses[3].date}
-      />
-    </div>
+      /> */}
+      </div>
     </div>
   );
 }
